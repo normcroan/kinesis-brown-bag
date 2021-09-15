@@ -28,4 +28,4 @@ const putRecord = async (record) => {
   console.log(response);
 };
 
-putRecord(`hello!!!`);
+putRecord(`hello from ${process.env.LOGNAME}!`);
