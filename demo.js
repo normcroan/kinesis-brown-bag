@@ -1,7 +1,17 @@
 // reference: https://docs.aws.amazon.com/streams/latest/dev/kinesis-record-processor-implementation-app-nodejs.html
 
 const { KinesisClient, PutRecordCommand } = require("@aws-sdk/client-kinesis");
-const { credentials } = require("./sensitive/config");
+const AWS = require("aws-sdk");
+// NOTE: This may be used for testing if you cannot configure your local hi-app-dev profile
+// const { credentials } = require('./sensitive/config');
+
+// If you already have your hi-app-dev DeveloperAccess role setup in ~/.aws
+// Scripts for this:
+  // devops-aws/auth hi-app-dev DeveloperAccess
+  // provider/scripts/dev/aws_auth hi-app-dev DeveloperAccess
+const credentials = new AWS.SharedIniFileCredentials({
+  profile: "hi-app-dev-DeveloperAccess",
+});
 
 const client = new KinesisClient({
   credentials,
@@ -18,4 +28,4 @@ const putRecord = async (record) => {
   console.log(response);
 };
 
-putRecord("say hi!");
+putRecord(`hello!!!`);
