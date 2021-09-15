@@ -1,7 +1,7 @@
 // reference: https://docs.aws.amazon.com/streams/latest/dev/kinesis-record-processor-implementation-app-nodejs.html
 
 const { KinesisClient, PutRecordCommand } = require("@aws-sdk/client-kinesis");
-const { credentials } = require("./config");
+const { credentials } = require("./sensitive/config");
 
 const client = new KinesisClient({
   credentials,
