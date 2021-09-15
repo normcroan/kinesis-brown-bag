@@ -1,0 +1,12 @@
+{
+  "name": "kinesis",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "norm",
+  "license": "none",
+  "private": true,
+  "dependencies": {
+    "@aws-sdk/client-kinesis": "^3.31.0",
+    "log4js": "^6.3.0"
+  }
+}
